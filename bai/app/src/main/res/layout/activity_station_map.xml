@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <RelativeLayout
+        android:id="@+id/layout_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title">
+
+
+        <com.amap.api.maps.MapView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tips" />
+
+        <!--自定义位置信息-->
+        <ImageView
+            android:id="@+id/img_location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/selector_btn_location"
+            />
+
+        <LinearLayout
+            android:id="@+id/tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/default_padding_tnb">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/ic_dmarker_fast" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="快充桩点"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@mipmap/ic_dmarker_slow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="慢充桩点"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@mipmap/ic_dmarker_mix" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="快慢充桩点"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="@string/station_map_tips"
+                android:textSize="13dp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="68dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="3dp"
+            android:text="当前城市"
+            android:layout_marginTop="35dp"
+            android:textColor="#00AAEE"
+            android:textSize="13dp"
+            android:id="@+id/current_city" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_list_frame"
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/lv_station_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_primary"
+        android:divider="@null"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/content_bg">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="广州市"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_title" />
+
+        <ImageView
+            android:id="@+id/img_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingBottom="@dimen/title_tnb_padding"
+            android:paddingLeft="@dimen/title_lnr_padding"
+            android:paddingRight="@dimen/title_lnr_padding"
+            android:paddingTop="@dimen/title_tnb_padding"
+            android:src="@mipmap/ic_left_arrow_white" />
+
+        <Button
+            android:id="@+id/btn_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/img_title_left"
+            android:background="@null"
+            android:gravity="center"
+            android:paddingLeft="@dimen/title_lnr_padding"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_16dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/img_title_right"
+            android:background="@null"
+            android:gravity="center"
+            android:paddingRight="@dimen/title_lnr_padding"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_16dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="@dimen/title_tnb_padding"
+            android:paddingRight="@dimen/title_lnr_padding"
+            android:paddingTop="@dimen/title_tnb_padding" />
+
+        <ImageView
+            android:id="@+id/img_title_right2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/img_title_right"
+            android:paddingBottom="@dimen/title_tnb_padding"
+            android:paddingLeft="@dimen/title_lnr_padding"
+            android:paddingTop="@dimen/title_tnb_padding" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bg_primary"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
